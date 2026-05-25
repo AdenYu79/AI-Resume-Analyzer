@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resumes</title>
+</head>
+<body>
+    <h1>Saved Resumes</h1>
+
+    {% if resumes %}
+        {% for resume in resumes %}
+            <hr>
+            <p><strong>Name:</strong> {{ resume[1] }}</p>
+            <p><strong>Resume Text:</strong></p>
+            <p>{{ resume[2] }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No resumes saved yet.</p>
+    {% endif %}
+
+    <br>
+    <a href="/resumes/new">Add New Resume</a><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

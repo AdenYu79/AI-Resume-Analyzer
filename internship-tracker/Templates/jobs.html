@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jobs</title>
+</head>
+<body>
+    <h1>Saved Job Descriptions</h1>
+
+    {% if jobs %}
+        {% for job in jobs %}
+            <hr>
+            <p><strong>Company:</strong> {{ job[1] }}</p>
+            <p><strong>Title:</strong> {{ job[2] }}</p>
+            <p><strong>Description:</strong></p>
+            <p>{{ job[3] }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No job descriptions saved yet.</p>
+    {% endif %}
+
+    <br>
+    <a href="/jobs/new">Add New Job</a><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

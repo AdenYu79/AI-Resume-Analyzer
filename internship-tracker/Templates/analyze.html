@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Analyze Resume</title>
+    </head>
+    <body>
+        <h1>Analyze Resume Against Job</h1>
+
+        <form method="post">
+            <label for="resume_id">Choose Resume:</label><br>
+            <select id="resume_id" name="resume_id">
+                {% for resume in resumes %}
+                    <option value="{{ resume[0] }}">{{ resume[1] }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="job_id">Choose Job:</label><br>
+            <select id="job_id" name="job_id">
+                {% for job in jobs %}
+                    <option value="{{ job[0] }}">{{ job[1] }} - {{ job[2] }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if result %}
+            <hr>
+            <h2>AI Analysis Result</h2>
+            <p><strong>Resume:</strong> {{ result.resume_name }}</p>
+            <p><strong>Job:</strong> {{ result.job_company }} - {{ result.job_title }}</p>
+            <pre>{{ result.ai_text }}</pre>
+        {% endif %}
+
+        <br>
+        <a href="/">Back to Home</a>
+    </body>
+    </html>

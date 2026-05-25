@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applications</title>
+</head>
+<body>
+    <h1>Applications</h1>
+
+    {% if applications %}
+        {% for app in applications %}
+            <hr>
+            <p><strong>Company:</strong> {{ app[1] }}</p>
+            <p><strong>Role:</strong> {{ app[2] }}</p>
+            <p><strong>Status:</strong> {{ app[3] }}</p>
+            <p><strong>Deadline:</strong> {{ app[4] }}</p>
+            <p><strong>Notes:</strong> {{ app[5] }}</p>
+
+            <a href="/applications/edit/{{ app[0] }}">Edit</a>
+            <a href="/applications/delete/{{ app[0] }}">Delete</a>
+        {% endfor %}
+    {% else %}
+        <p>No applications saved yet.</p>
+    {% endif %}
+
+    <br>
+    <a href="/applications/new">Add New Application</a><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

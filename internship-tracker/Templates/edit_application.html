@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Application</title>
+</head>
+<body>
+    <h1>Edit Application</h1>
+
+    <form method="post">
+        <label for="company">Company:</label><br>
+        <input type="text" id="company" name="company" value="{{ application[1] }}"><br><br>
+
+        <label for="role">Role:</label><br>
+        <input type="text" id="role" name="role" value="{{ application[2] }}"><br><br>
+
+        <label for="status">Status:</label><br>
+        <input type="text" id="status" name="status" value="{{ application[3] }}"><br><br>
+
+        <label for="deadline">Deadline:</label><br>
+        <input type="date" id="deadline" name="deadline" value="{{ application[4] }}"><br><br>
+
+        <label for="notes">Notes:</label><br>
+        <textarea id="notes" name="notes" rows="4" cols="30">{{ application[5] }}</textarea><br><br>
+
+        <input type="submit" value="Update Application">
+    </form>
+
+    <br>
+    <a href="/applications">Back to Applications</a><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
